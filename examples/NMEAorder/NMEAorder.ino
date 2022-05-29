@@ -132,6 +132,17 @@ static void GPSloop()
 static bool quietTimeStarted()
 {
   uint32_t current_ms       = millis();
+
+  // Make sure to wait 5 ms after start, because else it can fail
+  // directly after start, thinking nothing has been received for 5 ms.
+  static bool first_run = true;
+
+  if (first_run) {
+    first_run = false;
+
+    last_rx = current_ms;
+  }
+
   uint32_t ms_since_last_rx = current_ms - last_rx;
 
   if (ms_since_last_rx > 5) {
