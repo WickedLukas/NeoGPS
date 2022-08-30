@@ -36,7 +36,7 @@
 //#define NMEAGPS_PARSE_GSV
 //#define NMEAGPS_PARSE_GST
 #define NMEAGPS_PARSE_RMC
-//#define NMEAGPS_PARSE_VTG
+#define NMEAGPS_PARSE_VTG
 //#define NMEAGPS_PARSE_ZDA
 
 //------------------------------------------------------
