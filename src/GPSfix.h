@@ -135,7 +135,7 @@ public:
     void calculateNorthAndEastVelocityFromSpeedAndHeading()
     {
       #if defined( GPS_FIX_HEADING ) && defined( GPS_FIX_SPEED )
-        if (valid.heading && valid.speed && valid.velned) {
+        if (valid.heading && valid.speed) {
 
           float course         = heading() * NeoGPS::Location_t::RAD_PER_DEG;
           float speed_cm_per_s = speed_metersph() * (100.0 / 3600.0);
